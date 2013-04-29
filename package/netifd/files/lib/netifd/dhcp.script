@@ -19,10 +19,12 @@ setup_interface () {
 	proto_add_ipv4_address "$ip" "${subnet:-255.255.255.0}"
 	# TODO: apply $broadcast
 
+	#EC2 Stuff
+        [ "$INTERFACE" == "wan" ] && {
 	for i in $router; do
 		proto_add_ipv4_route 0.0.0.0 0 "$i"
 	done
-
+	}
 	# CIDR STATIC ROUTES (rfc3442)
 	[ -n "$staticroutes" ] && set_classless_routes $staticroutes
 	[ -n "$msstaticroutes" ] && set_classless_routes $msstaticroutes

@@ -17,7 +17,8 @@ setup_interface() {
 	echo "udhcpc: ifconfig $interface $ip netmask ${subnet:-255.255.255.0} broadcast ${broadcast:-+}"
 	ifconfig $interface $ip netmask ${subnet:-255.255.255.0} broadcast ${broadcast:-+}
 
-	[ -n "$router" ] && [ "$router" != "0.0.0.0" ] && [ "$router" != "255.255.255.255" ] && {
+	#EC2 Specific here, in case the eth device is eth0, we will not add default routes, otherwise we will just ignore them
+        [ "$interface" == "eth0" ] && [ -n "$router" ] && [ "$router" != "0.0.0.0" ] && [ "$router" != "255.255.255.255" ] && {
 		echo "udhcpc: setting default routers: $router"
 
 		local valid_gw=""
