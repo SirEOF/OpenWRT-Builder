@@ -1,5 +1,5 @@
 config system
-	option hostname	OpenWrt
+	option hostname	OpenWrt-EC2
 	option timezone	UTC
 
 config timeserver ntp
