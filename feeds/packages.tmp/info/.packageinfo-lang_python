@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/lang/python/Makefile
 Package: python
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +libpthread +zlib +libffi +python-mini
 Menu-Depends: 
 Provides: 
@@ -27,7 +27,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-mini
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +libpthread +zlib
 Menu-Depends: 
 Provides: 
@@ -53,7 +53,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-doc
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini
 Menu-Depends: 
 Provides: 
@@ -72,7 +72,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-bzip2
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libbz2
 Menu-Depends: 
 Provides: 
@@ -91,7 +91,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-expat
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libexpat
 Menu-Depends: 
 Provides: 
@@ -110,7 +110,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-gzip
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini
 Menu-Depends: 
 Provides: 
@@ -129,7 +129,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-openssl
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libopenssl
 Menu-Depends: 
 Provides: 
@@ -148,7 +148,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-shutil
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini
 Menu-Depends: 
 Provides: 
@@ -167,7 +167,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-sqlite3
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python +libsqlite3
 Menu-Depends: 
 Provides: 
@@ -186,7 +186,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-gdbm
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libgdbm
 Menu-Depends: 
 Provides: 
@@ -205,7 +205,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-readline
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libreadline +libncurses @BROKEN
 Menu-Depends: 
 Provides: 
@@ -224,7 +224,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-ncurses
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libncurses
 Menu-Depends: 
 Provides: 

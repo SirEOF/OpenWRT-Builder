@@ -3,7 +3,7 @@
 INSTANCE=$(curl http://169.254.169.254/latest/meta-data/instance-id -s )
 AZ=$(curl http://169.254.169.254/latest/meta-data/placement/availability-zone -s )
 REGION=${AZ%?}
-BINS=$(pwd)/bin/x86/
+BINS=$(pwd)/bin/x86_64/
 echo $INSTANCE
 echo $AZ
 echo $REGION
@@ -38,8 +38,8 @@ kernel /boot/vmlinuz root=/dev/xvda1 rootfstype=ext4 rootwait xencons=hvc consol
 #copy the kernel and the FS
 echo "going to copy stuff now"
 
-sudo cp $BINS/openwrt-x86-xen_domu-vmlinuz /mnt/boot/vmlinuz
-sudo tar -xzvf $BINS/openwrt-x86-xen_domu-rootfs.tar.gz -C /mnt/
+sudo cp $BINS/openwrt-x86_64-xen_domu-vmlinuz /mnt/boot/vmlinuz
+sudo tar -xzvf $BINS/openwrt-x86_64-xen_domu-rootfs.tar.gz -C /mnt/
 
 sudo umount /mnt
 
@@ -47,9 +47,9 @@ sudo umount /mnt
 ec2-detach-volume --region $REGION $VOLUME -i $INSTANCE /dev/sdx
 
 sleep 5
-SNAPID=$(ec2-create-snapshot --region $REGION -d "OpenWRT Image Creation" $VOLUME | awk {'printf $2'})
+SNAPID=$(ec2-create-snapshot --region $REGION -d "OpenWRT x86_64 Image Creation" $VOLUME | awk {'printf $2'})
 sleep 10s
-ec2-register --region $REGION --name "OpenWRT Built AMI-$(date +%s)" --description "OpenWRT Built AMI-$(date +%s)"  -a i386 -b /dev/sda1=$SNAPID:1:false --root-device-name /dev/sda1 --kernel aki-75665e01
+ec2-register --region $REGION --name "OpenWRT Built x86_64 AMI-$(date +%s)" --description "OpenWRT Built x86_64 AMI-$(date +%s)"  -a x86_64 -b /dev/sda1=$SNAPID:1:false --root-device-name /dev/sda1 --kernel aki-71665e05
 
 ec2-delete-volume --region $REGION $VOLUME
 

@@ -1616,31 +1616,6 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 @@
 
 
-Source-Makefile: feeds/packages/net/batman-adv/Makefile
-Package: kmod-batman-adv
-Submenu: Network Support
-Version: <LINUX_VERSION>+2012.3.0-3
-Depends: +kmod-lib-crc16 +libc
-Menu-Depends: 
-Provides: 
-Section: kernel
-Category: Kernel modules
-Title: B.A.T.M.A.N. Adv
-Maintainer: Marek Lindner <lindner_marek@yahoo.de>
-Source: batman-adv-2012.3.0.tar.gz
-Type: ipkg
-Description: B.A.T.M.A.N. advanced is a kernel module which allows to
-build layer 2 mesh networks. This package contains the
-version 2012.3.0 of the kernel module plus its user space
-configuration & managerment tool batctl.
-http://www.open-mesh.org/
-Marek Lindner <lindner_marek@yahoo.de>
-@@
-Config:
-	source "feeds/packages/net/batman-adv/Config.in"
-@@
-
-
 Source-Makefile: feeds/packages/net/remotefs/Makefile
 Package: remotefs
 Submenu: Filesystem
@@ -6711,43 +6686,6 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 @@
 
 
-Source-Makefile: feeds/packages/net/bmx6/Makefile
-Package: bmx6
-Menu: 1
-Submenu: Routing and Redirection
-Version: r2011031602
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: BMX6 layer 3 routing daemon
-Maintainer: Axel Neumann <neumann@cgws.de>
-Source: bmx6-r2011031602.tar.gz
-Type: ipkg
-Description: BMX6 layer 3 routing daemon supporting IPv4, IPv6, and IPv4 over IPv6 -  http://www.bmx6.net
-http://bmx6.net/
-Axel Neumann <neumann@cgws.de>
-@@
-
-Package: bmx6-uci-config
-Submenu: Routing and Redirection
-Version: r2011031602
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread bmx6 +libuci
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: configuration plugin based on uci (recommended!)
-Maintainer: Axel Neumann <neumann@cgws.de>
-Source: bmx6-r2011031602.tar.gz
-Type: ipkg
-Description: configuration plugin based on uci (recommended!)
-http://bmx6.net/
-Axel Neumann <neumann@cgws.de>
-@@
-
-
 Source-Makefile: feeds/packages/net/netio/Makefile
 Package: netio
 Version: 1.31-1
@@ -10423,7 +10361,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Source-Makefile: feeds/packages/net/vnstat/Makefile
 Package: vnstat
-Version: 1.11-3
+Version: 1.11-4
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
 Menu-Depends: 
 Provides: 
@@ -10443,7 +10381,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 @@
 
 Package: vnstati
-Version: 1.11-3
+Version: 1.11-4
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread vnstat +libgd
 Menu-Depends: 
 Provides: 
@@ -12806,59 +12744,6 @@ Type: ipkg
 Description: netatalk
 http://netatalk.sourceforge.net
 W. Michael Petullo <mike@flyn.org>
-@@
-
-
-Source-Makefile: feeds/packages/net/batman/Makefile
-Package: batmand
-Submenu: Routing and Redirection
-Version: r1439-2
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +libpthread +kmod-tun
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: B.A.T.M.A.N. layer 3 routing daemon
-Maintainer: Marek Lindner <lindner_marek@yahoo.de>
-Source: batmand-r1439.tar.gz
-Type: ipkg
-Description: B.A.T.M.A.N. layer 3 routing daemon
-http://www.open-mesh.org/
-Marek Lindner <lindner_marek@yahoo.de>
-@@
-
-Package: vis
-Submenu: Routing and Redirection
-Version: r1439-2
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +libpthread
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: visualization server for B.A.T.M.A.N. layer 3
-Maintainer: Marek Lindner <lindner_marek@yahoo.de>
-Source: batmand-r1439.tar.gz
-Type: ipkg
-Description: visualization server for B.A.T.M.A.N. layer 3
-http://www.open-mesh.org/
-Marek Lindner <lindner_marek@yahoo.de>
-@@
-
-Package: kmod-batgat
-Submenu: Network Support
-Version: <LINUX_VERSION>+r1439-2
-Depends: +batmand @BROKEN
-Menu-Depends: 
-Provides: 
-Section: kernel
-Category: Kernel modules
-Title: B.A.T.M.A.N. gateway module
-Maintainer: Marek Lindner <lindner_marek@yahoo.de>
-Source: batmand-r1439.tar.gz
-Type: ipkg
-Description: Kernel gateway module for B.A.T.M.A.N. for better tunnel performance
-http://www.open-mesh.org/
-Marek Lindner <lindner_marek@yahoo.de>
 @@
 
 
@@ -16807,298 +16692,6 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 @@
 
 
-Source-Makefile: feeds/packages/net/olsrd/Makefile
-Package: olsrd
-Menu: 1
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +libpthread
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: OLSR (Optimized Link State Routing) daemon
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: OLSR (Optimized Link State Routing) daemon
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-arprefresh
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Kernel ARP cache refresh plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Kernel ARP cache refresh plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-dot-draw
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Dot topology information plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Dot topology information plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-bmf
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd +kmod-tun
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Basic multicast forwarding plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Basic multicast forwarding plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-dyn-gw
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Dynamic internet gateway plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Dynamic internet gateway plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-dyn-gw-plain
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Dynamic internet gateway plain plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Dynamic internet gateway plain plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-httpinfo
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Small informative web server plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Small informative web server plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-jsoninfo
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Small informative plugin with JSON output
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Small informative plugin with JSON output
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-mdns
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: MDNS/Zeroconf/Bonjour packet distribution 
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: MDNS/Zeroconf/Bonjour packet distribution 
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-nameservice
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Lightweight hostname resolver plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Lightweight hostname resolver plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-p2pd
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Peer to Peer Discovery plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Peer to Peer Discovery plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-pgraph
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: output network topology for pgraph
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: output network topology for pgraph
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-quagga
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Quagga plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Quagga plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-secure
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Message signing plugin to secure routing domain
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Message signing plugin to secure routing domain
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-tas
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: tas - tiny appliation server programming example
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: tas - tiny appliation server programming example
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-txtinfo
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Small informative web server plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Small informative web server plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-Package: olsrd-mod-watchdog
-Submenu: Routing and Redirection
-Version: 0.6.3-3
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread olsrd
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: Watchdog plugin
-Maintainer: Saverio Proto <zioproto@gmail.com>
-Source: olsrd-0.6.3.tar.bz2
-Type: ipkg
-Description: Watchdog plugin
-http://www.olsr.org/
-Saverio Proto <zioproto@gmail.com>
-@@
-
-
 Source-Makefile: feeds/packages/net/linuxigd/Makefile
 Package: linuxigd
 Submenu: Firewall
@@ -18322,20 +17915,20 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 Source-Makefile: feeds/packages/net/asterisk-chan-sccp-b/Makefile
 Package: asterisk18-chan-sccp-b
 Submenu: Telephony
-Version: r3004-1
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +asterisk18 +libltdl
+Version: r3004-2
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread asterisk18 +libltdl
 Menu-Depends: 
 Provides: 
 Section: net
 Category: Network
 Title: SCCP channel provider for asterisk
-Maintainer: Hans Zandbelt <hans.zandbelt@gmail.com>
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
 Source: asterisk18-chan-sccp-b-r3004.tar.gz
 Type: ipkg
 Description:  SCCP channel provider for asterisk. It delivers extended functionality for SCCP phones over chan_skinny delivered
  by asterisk by default.
-http://chan-sccp-b.net.sourceforge.net/
-Hans Zandbelt <hans.zandbelt@gmail.com>
+http://chan-sccp-b.sourceforge.net/
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
 @@
 
 
@@ -21408,7 +21001,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 Source-Makefile: feeds/packages/net/miniupnpd/Makefile
 Package: miniupnpd
 Submenu: Firewall
-Version: 1.8-1
+Version: 1.8.20130426-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +iptables +libip4tc +IPV6:libip6tc +libnfnetlink
 Menu-Depends: 
 Provides: 
@@ -21416,7 +21009,7 @@ Section: net
 Category: Network
 Title: Lightweight UPnP daemon
 Maintainer: Daniel Dickinson <openwrt@cshore.neomailbox.net>
-Source: miniupnpd-1.8.tar.gz
+Source: miniupnpd-1.8.20130426.tar.gz
 Type: ipkg
 Description: Lightweight UPnP daemon
 http://miniupnp.free.fr/
@@ -24843,25 +24436,6 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 @@
 
 
-Source-Makefile: feeds/packages/net/bmxd/Makefile
-Package: bmxd
-Submenu: Routing and Redirection
-Version: r2012011001
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +kmod-tun
-Menu-Depends: 
-Provides: 
-Section: net
-Category: Network
-Title: B.a.t.M.a.n. eXperimental (BMX) layer 3 routing daemon
-Maintainer: Axel Neumann <neumann@cgws.de>
-Source: bmxd-r2012011001.tar.gz
-Type: ipkg
-Description: B.a.t.M.a.n. eXperimental (BMX) layer 3 routing daemon
-http://www.bmx6.net/
-Axel Neumann <neumann@cgws.de>
-@@
-
-
 Source-Makefile: feeds/packages/net/bwm/Makefile
 Package: bwm
 Version: 1.1.0-2
@@ -27297,7 +26871,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 Source-Makefile: feeds/packages/lang/python/Makefile
 Package: python
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +libpthread +zlib +libffi +python-mini
 Menu-Depends: 
 Provides: 
@@ -27323,7 +26897,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-mini
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +libpthread +zlib
 Menu-Depends: 
 Provides: 
@@ -27349,7 +26923,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-doc
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini
 Menu-Depends: 
 Provides: 
@@ -27368,7 +26942,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-bzip2
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libbz2
 Menu-Depends: 
 Provides: 
@@ -27387,7 +26961,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-expat
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libexpat
 Menu-Depends: 
 Provides: 
@@ -27406,7 +26980,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-gzip
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini
 Menu-Depends: 
 Provides: 
@@ -27425,7 +26999,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-openssl
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libopenssl
 Menu-Depends: 
 Provides: 
@@ -27444,7 +27018,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-shutil
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini
 Menu-Depends: 
 Provides: 
@@ -27463,7 +27037,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-sqlite3
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python +libsqlite3
 Menu-Depends: 
 Provides: 
@@ -27482,7 +27056,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-gdbm
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libgdbm
 Menu-Depends: 
 Provides: 
@@ -27501,7 +27075,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-readline
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libreadline +libncurses @BROKEN
 Menu-Depends: 
 Provides: 
@@ -27520,7 +27094,7 @@ OpenWrt Developers Team <openwrt-devel@openwrt.org>
 
 Package: python-ncurses
 Submenu: Python
-Version: 2.7.3-1
+Version: 2.7.3-2
 Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +python-mini +libncurses
 Menu-Depends: 
 Provides: 
@@ -38858,24 +38432,6 @@ Type: ipkg
 Description: The Independent JPEG Group's JPEG manipulation tools
 http://www.ijg.org/
 OpenWrt Developers Team <openwrt-devel@openwrt.org>
-@@
-
-
-Source-Makefile: feeds/packages/libs/firewall-mod-save/Makefile
-Package: firewall-mod-save
-Version: 1.0-2
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +iptables
-Menu-Depends: 
-Provides: 
-Section: libs
-Category: Libraries
-Title: Preserve dynamic chains during firewall restart
-Maintainer: Daniel Dickinson <openwrt@cshore.neomailbox.net>
-Source: 
-Type: ipkg
-Description:     Uses iptables-save to save the option chain in option table (default filter)
-    as defined by the config section save in /etc/config/firewall.
-Daniel Dickinson <openwrt@cshore.neomailbox.net>
 @@
 
 

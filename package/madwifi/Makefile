@@ -77,6 +77,9 @@ endif
 ifeq ($(ARCH),armeb)
   HAL_TARGET:=xscale-be-elfgnueabi
 endif
+ifeq ($(ARCH), x86_64)
+  HAL_TARGET=x86_64-elf
+endif
 ifeq ($(ARCH),arm)
   HAL_TARGET:=xscale-le-elfgnueabi
   ifeq ($(BOARD),cns21xx)

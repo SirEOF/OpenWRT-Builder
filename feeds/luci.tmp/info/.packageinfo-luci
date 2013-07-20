@@ -290,20 +290,20 @@ http://luci.subsignal.org/
 LuCI Development Team <luci@lists.subsignal.org>
 @@
 
-Package: luci-proto-6x4
+Package: luci-proto-ipv6
 Submenu: 6. Protocols
 Version: 1
-Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread +PACKAGE_luci-proto-6x4:6in4 +PACKAGE_luci-proto-6x4:6to4 +PACKAGE_luci-proto-6x4:6rd
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
 Menu-Depends: 
 Provides: 
 Build-Depends: lua/host
 Section: luci
 Category: LuCI
-Title: Support for 6in4/6to4/6rd
+Title: Support for DHCPv6/6in4/6to4/6rd/DS-Lite
 Maintainer: LuCI Development Team <luci@lists.subsignal.org>
 Source: luci-.tar.gz
 Type: ipkg
-Description: Support for 6in4/6to4/6rd
+Description: Support for DHCPv6/6in4/6to4/6rd/DS-Lite
 http://luci.subsignal.org/
 LuCI Development Team <luci@lists.subsignal.org>
 @@

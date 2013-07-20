@@ -35,6 +35,7 @@ UCLIBC_TARGET_ARCH:=$(shell echo $(ARCH) | sed -e s'/-.*//' \
 		-e 's/mips.*/mips/' \
 		-e 's/mipsel.*/mips/' \
 		-e 's/cris.*/cris/' \
+		-e 's/amd64.*/amd64/' \
 )
 
 GEN_CONFIG=$(SCRIPT_DIR)/kconfig.pl -n \
