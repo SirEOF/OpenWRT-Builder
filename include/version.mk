@@ -25,7 +25,7 @@ VERSION_NICK:=$(if $(VERSION_NICK),$(VERSION_NICK),$(RELEASE))
 
 VERSION_REPO:=$(call qstrip,$(CONFIG_VERSION_REPO))
 #VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),http://ec2-openwrt.tiagoperalta.pt/12.09.1-EC2/%S/packages)
-VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),http://ec2-openwrt.tiagoperalta.pt/12.09.1-EC2/x86/packages)
+VERSION_REPO:=$(if $(VERSION_REPO),$(VERSION_REPO),http://ec2-openwrt.tiagoperalta.pt/12.09.1-EC2-x86_64/x86_64/packages)
 
 VERSION_DIST:=$(call qstrip,$(CONFIG_VERSION_DIST))
 VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),OpenWrt EC2)

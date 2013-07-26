@@ -38,7 +38,7 @@
 +++ b/bytesex.h
 @@ -9,9 +9,12 @@
  
- #if 	defined(__i386__) \
+ #if 	defined(__i386__) || defined(__x86_64__) \
  	|| defined(__alpha__) \
 +	|| (defined(__arm__) && (defined(ARMEL) || defined(__ARMEL__)))  \
  	|| (defined(__mips__) && (defined(MIPSEL) || defined (__MIPSEL__)))
